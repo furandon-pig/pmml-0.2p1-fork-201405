@@ -1,0 +1,56 @@
+About the PMML editing mode for Emacs (including Mule or Nemacs)
+----------------------------------------------------------------
+
+This PMML editing mode is supposed to be used in either of the following
+two configurations: 
+
+  1) In combination with a third-party standard MIDI file player (Only 
+     playing will be supported)
+  2) In combination with a dedicated server program (Both playing and 
+     recording will be supported)
+
+At present, the dedicated server program is not realesed yet, 
+and therefore, 1) is the only way of the use.
+
+
+How to use the PMML editing mode
+--------------------------------
+* Preparation
+
+Add the following three lines to your ".emacs".
+The "pmml-player-command" variable should be set to the command name 
+and command line arguments for the standard MIDI file player that you use
+with each command argument being enclosed in double-quotes.
+
+;; PMML mode setup
+(setq pmml-player-command '("timidity" "-s16000"))
+(require 'pmml-mode)
+
+When "pmml-mode.el" is installed in a non-standard directory,
+the directory needs to be added to the "load-path" variable 
+prior to calling the "require" function above.
+
+* How to get started
+
+When you open a file whose file name extension is ".pml",
+the editing mode automatically goes to the PMML mode.
+
+* Basic operations
+
+Like the C mode, TAB is recognized as a auto-indenting command rather than
+inserting the TAB character itself. 
+
+To play the work from the beginning, type "C-c C-f". 
+
+To stop the playing, type "C-c C-q".
+
+To play the work from the current position of the point (cursor), 
+type "C-c C-p", 
+N.B.: When the point is located in a macro argument or in a comment, 
+      this may not work. 
+
+To play the work from the current position of the point regarding to
+only the track where the point is put, type  "C-c p", 
+
+For other information, try M-x describe-mode or M-x describe-function.
+

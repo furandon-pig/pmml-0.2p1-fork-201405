@@ -1,0 +1,122 @@
+#
+# list of PMML keywords
+#
+#
+#
+#  Copyright (C) 1997,1998   Satoshi Nishimura
+#
+#  This program is free software; you can redistribute it and/or modify
+#  it under the terms of the GNU General Public License as published by
+#  the Free Software Foundation; either version 2 of the License, or
+#  (at your option) any later version.
+#
+#  This program is distributed in the hope that it will be useful,
+#  but WITHOUT ANY WARRANTY; without even the implied warranty of
+#  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#  GNU General Public License for more details.
+#
+#  You should have received a copy of the GNU General Public License
+#  along with this program; if not, write to the Free Software
+#  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+#
+#
+#
+# name		flags		prec	regno	handler
+#
+t 		F_REG|F_OPD|F_C	0	R_t 	do_reg
+tb		F_REG|F_OPD|F_C	0	R_tb	do_reg
+dt		F_REG|F_OPD|F_C	0	R_dt	do_reg
+sh		F_REG|F_OPD|F_C	0	R_sh	do_reg
+tk		F_REG|F_OPD|F_C	0	R_tk	do_reg
+ch		F_REG|F_OPD|F_C	0	R_ch	do_reg
+n		F_REG|F_OPD|F_C	0	R_n	do_reg
+tp		F_REG|F_OPD|F_C	0	R_tp	do_reg
+o		F_REG|F_OPD|F_C	0	R_o	do_reg
+key		F_REG|F_OPD|F_C	0	R_key	do_reg
+v		F_REG|F_OPD|F_C	0	R_v	do_reg
+nv		F_REG|F_OPD|F_C	0	R_nv	do_reg
+ac		F_REG|F_OPD|F_C	0	R_ac	do_reg
+l		F_REG|F_OPD|F_C	0	R_l	do_reg
+do		F_REG|F_OPD|F_C	0	R_do	do_reg
+dp		F_REG|F_OPD|F_C	0	R_dp	do_reg
+shl		F_B|F_HAVEEQ|F_PU   9	T_SHLEQ	op_shl
+shr		F_B|F_HAVEEQ|F_PU   9	T_SHREQ	op_shr
+xor		F_B|F_HAVEEQ|F_PU   5	T_XOREQ	op_xor
+rt		F_REG|F_OPD|F_C	0	R_t	do_reg
+du		F_REG|F_OPD|F_C	0	R_do	do_reg
+dr		F_REG|F_OPD|F_C	0	R_dp	do_reg
+note_on		F_C		0	0	do_note_on
+note_off	F_C		0	0	do_note_off
+note		F_C		0	0	do_pitch
+defthread	F_C		0	0	do_defthread
+signal		F_C		0	0	do_signal
+wait		F_C		0	0	do_wait
+alt		F_C		0	0	do_alt
+default		0		0	0	NULL
+prog		F_C		0	0	do_ctrl
+ctrl		F_C		0	0	do_ctrl
+ctrl_to		F_C		0	0	do_cont_ctrl
+ctrl_cto	F_C		0	0	do_cont_ctrl
+ctrl_pt		F_C		0	0	do_cont_ctrl
+kp		F_C		0	0	do_ctrl
+cpr		F_C		0	0	do_ctrl
+bend		F_C		0	0	do_ctrl
+tempo		F_C		0	0	do_ctrl
+excl		F_C		0	0	do_excl
+excl2		F_C		0	0	do_excl
+arbit		F_C		0	0	do_excl
+seqno		F_C		0	0	do_seqno
+text		F_C		0	0	do_text
+meta		F_C		0	0	do_meta
+smpte		F_C		0	0	do_smpte
+timesig		F_C		0	0	do_timesig
+keysig		F_C		0	0	do_keysig
+end		F_C		0	0	do_end
+load		F_C		0	0	do_load
+loadtrk		F_C		0	0	do_load
+close		F_C		0	0	do_close
+def		F_M 		0	0	do_def
+edef		F_M 		0	0	do_def
+undef		F_M		0	0	do_undef
+local		F_M		0	0	identifier
+append		F_M		0	0	do_append
+insert		F_M		0	0	do_insert
+shift		F_M		0	0	do_shift
+include		F_M		0	0	do_include
+if		F_M		0	0	do_if
+elsif		0		0	0	NULL
+else		0		0	0	NULL
+switch		F_M		0	0	do_switch
+while		F_M		0	0	do_while
+for		F_M		0	0	do_for
+foreach		F_M		0	0	do_foreach
+repeat		F_M		0	0	do_repeat
+break		F_M		0	0	do_break
+eval		F_EV		0	0	do_eval
+evalstr		F_EV		0	0	do_evalstr
+null		F_M		0	0	do_null
+defeff		F_C		0	0	do_defeff
+attach		F_C		0	0	do_attach
+detach		0		0	0	NULL
+case		0		0	0	NULL
+all		0		0	0	NULL
+init		0		0	0	NULL
+wrap		0		0	0	NULL
+reject		0		0	0	NULL
+enable		F_C		0	0	do_enable
+disable		F_C		0	0	do_enable
+set_thru_etypes	F_C		0	0	do_eff_etypes
+set_eff_etypes	F_C		0	0	do_eff_etypes
+add_eff_etypes	F_C		0	0	do_eff_etypes
+del_eff_etypes	F_C		0	0	do_eff_etypes
+set_thru_chs	F_C		0	0	do_eff_chs
+set_eff_chs	F_C		0	0	do_eff_chs
+add_eff_chs	F_C		0	0	do_eff_chs
+del_eff_chs	F_C		0	0	do_eff_chs
+ctrl_any	F_C		0	0	do_ctrl_any
+ecode		F_M		0	0	do_ecode
+#
+# aliases
+#
+gt = DU
+gr = DR

@@ -1,0 +1,33 @@
+ver 0.67
+
+* Fixed a bug that a file opened by include() is never closed
+* Default PMML_PATH value for DOS is changed
+* The notename() built-in function now takes the optional 2nd argument 
+  meaning that the octave of note names is relatively specified.
+
+ver 0.66 (Release 0.2)     July  2  1998
+
+* Conversion between integers and rational numbers or between floating point
+  numbers and rational numbers is now performed based on 'ticks'. 
+  For example, 480 (integer) is converted to 'q' (formerly, 480 is converted
+  to '480w').
+
+ver 0.65
+
+* Added macro argument reference by $[expr].
+
+ver 0.64
+
+* move "util.c" and "smf.c" to the "../common" directory
+* change the program name from "interpreter" to "compiler".
+* Give meta events higher priority than control-change or exclusive events.
+* Speed up the processing of empty effector actions.
+* The 'rtempo' virtual controller is now built into the "$smfout" effector.
+* The mask value for the excl2 command is changed to 0xff from 0x7f.
+
+ver 0.63
+
+* Fixed a bug that event order is changed by pair_notes() when using the
+  "-p" option.
+
+ver 0.62 (Release 0.1)     Sep  2  1997

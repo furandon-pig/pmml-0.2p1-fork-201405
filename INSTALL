@@ -1,0 +1,29 @@
+To compile the programs:
+  
+  1. Edit the configuration parameters defined in "Makefile" of 
+     this directory.
+  2. Type 'make'.
+
+
+To check if the PMML compiler is properly compiled:
+
+  1. Type 'make test'.
+
+This will run the PMML compiler across some testing codes, and
+compare resulting MIDI files with reference MIDI files.  If the
+comparison for "test1.mid" or "test2.mid" is failed, it means that the
+PMML compiler is corrupted.  If the comparison for "test3.mid" is
+failed, it doesn't necessarily mean the corruption.  Due to the
+incompatibility in floating-point arithmetic, slightly different 
+velocity or control values may be generated on some combination of 
+machines and C compilers.
+Try to translate "test3.mid" and "test3.ref" to ASCII texts by 
+"pmml - e'dump()' -l MIDIFILE", and check if the difference is trivial.
+
+
+To install the compiled executable file and library files:
+
+  1. Type 'make install'.
+
+Our Emacs Lisp program is not installed by 'make install'. 
+Please copy emacs/pmml-mode.el manually to an appropriate directory.

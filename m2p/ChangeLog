@@ -1,0 +1,8 @@
+ver 0.13
+
+* Fixed an oversight that Shift-JIS code is not correctly handled
+* Default PMML_PATH value for DOS is changed
+* The bug that an isolated note-on event at the beginning of a track 
+  causes core dump in the MPL mode is fixed.
+
+ver 0.12 (Release 0.2)     July  2  1998

@@ -1,0 +1,23 @@
+- allow the "$smfout" effector to pass events to the next effector rather
+  than absorbing them (maybe useful in generating multiple SMFs)?
+
+- pack some "Out of range" warning messages to one? 
+
+- show line number for "Out of range" warning messages (This will require 
+  additional memory because we have to keep the line number for each event)?
+
+- give warning to unreferenced macros?
+
+- give warning to infinity loops?
+
+- allow macros to take arguments whose style is { ... } ?
+
+- allow to associate a user-definable attribute (of any data type) with 
+  each note event?
+
+- allow the "case(note)" action of effectors to receive the number of
+  sharp or flat signs? 
+
+- allow effector actions to obtain the value of the "dt" register?
+
+- unify interthread messages with events?

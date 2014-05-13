@@ -1,0 +1,149 @@
+This package contains Release 0.2 of PMML-related software,
+containing a PMML compiler (formerly referred to as a PMML interpreter), 
+a discompiler, macro libraries, an Emacs interface, 
+and some example musical pieces.
+The PMML compiler translates a music description language 
+called the Practical Music Macro Language (PMML) to a standard 
+MIDI file.  The compiler can also be used as a general tool 
+for manipulating standard MIDI files; for example, merging some 
+MIDI files, transposing notes in a MIDI file, converting a MIDI 
+file to an arbitrary form of a text, etc.
+The discompiler converts a Standard MIDI file to a PMML source code.
+
+WHAT IS PMML?
+-------------
+
+PMML is a musical event description/manipulation language designed
+for computer-controlled performances with MIDI instruments.
+Direct music description, algorithmic composition, and music 
+transformation are all supported.
+Here is a summary of the language features:
+
+ o  Musical phrases can directly be described by a sequence of
+    note names such as `C' or `D#'.  Chords and concurrent voices 
+    can also be represented with high readability.  In addition, 
+    musical expression like accents, timing shift, crescendo, 
+    or tempo rubato can be described straightforwardly.
+
+ o  All the kinds of events defined in the standard MIDI file format 
+    are supported.
+ 
+ o  A series of control-change events along a connect line segment 
+    or a piecewise polynomial curve can be generated.
+
+ o  Flow controls such as conditionals and loops are supported with 
+    C-like syntax. 
+
+ o  A powerful macro capability is provided.
+    Macros are particularly useful for defining common phrases or
+    accompaniment patterns.
+
+ o  An event processing module called an effector enables us to apply 
+    a user-definable action for each event in described music.
+    This realizes music transformation such as pitch conversion, 
+    time deformation, harmonization, or arpeggiation of chords.
+
+ o  The contents of external standard MIDI files can be inserted in 
+    described music.  The effectors can also be applied to the events 
+    in the external MIDI files.
+
+DIFFERENCE FROM RELEASE 0.1
+---------------------------
+
+ o  The discompiler (m2p) is newly added.  The discompiler supports two 
+    different output formats: one format basically contains an event 
+    for each line and the other format basically contains a measure
+    for each line.  Continuous control change is fitted to connected line
+    segments as much as possible.  In the `measure-per-line' format, 
+    chords are grouped with brackets.  There is no manual yet; however,
+    `m2p -h' will provide an overview of its usage.
+
+ o  The name `PMML interpreter' is changed to `PMML compiler'.
+
+ o  In the PMML compiler, the type conversion rules between rational numbers
+    and integer/floating-point numbers are changed so that the conversion
+    is performed based on 'ticks'.
+
+ o  For more details, see the ChangeLog file in each directory.    
+
+PACKAGE CONTENTS
+----------------
+
+   COPYING    - GNU General Public License
+   COPYING.j  - Japanese translation of GNU General Public License
+   INSTALL    - Installation instructions
+   INSTALL.j  - Japanese version of INSTALL (EUC code)
+   Makefile   - top-level Makefile
+   README     - this file
+   README.j   - Japanese version of this file
+   c_lib      - C programs which are not a part of our software
+                but distributed together for the sake of convenience
+   common     - C source codes of common routines
+   comp       - C source codes of the PMML compiler
+   emacs      - Emacs Lisp code for PMML editing mode
+   examples   - music work examples written in PMML including the 1st 
+                movement of Grieg's piano concerto
+   lib        - PMML macro/effector library files
+   m2p        - C source codes of the discompiler
+   manual     - Japanese manual (Texinfo format)
+
+PORTABILITY
+-----------
+
+The PMML compiler/discompiler is highly portable software, because 
+it doesn't use any terminal I/Os, window I/Os, MIDI I/Os, or any 
+non-standard libraries.  
+Probably, the only fundamental restriction is that it enforces the IEEE 
+floating-point format.
+So far, the following combinations of OS and C compiler have been tested:
+
+SunOS 4.1.3 - cc and gcc 2.7.2
+SunOS 5.5.1 - cc and gcc 2.7.2
+Linux Slackware 3.0 - gcc 2.7.0
+IRIX 5.2 -- cc and gcc 2.7.2
+IRIX 6.2 -- cc (with the -cckr option)
+IRIX 6.2 -- gcc 2.7.2
+DOS/V 6.3 -- gcc 2.6.3(djgpp)
+
+COPYING, DISTRIBUTION, AND MODIFICATION
+---------------------------------------
+
+Copying, distribution, and modification of this package (except the file 
+in the c_lib directory) are permitted under the GNU General Public License, 
+though it is not developed as a part of the GNU project.
+
+CAUTION
+-------
+
+The PMML compiler is still under development, and therefore, 
+the language specification of the PMML is subject to change
+without any prior notice.  When a new version of the PMML compiler
+is released, backward compatibility may not be guaranteed.
+
+This package comes with ABSOLUTELY NO WARRANTY. 
+See the GNU General Public License for more details.
+
+MANUAL
+------
+
+Sorry but an English version of the Manual is currently 
+not available yet. 
+
+BUG REPORTS
+-----------
+
+Send bug reports, comments or suggestions to <nisim@u-aizu.ac.jp>. 
+
+HOME PAGE URL (update information, etc.)
+----------------------------------------
+
+http://www-cgl.u-aizu.ac.jp/pmml/index.html
+
+AUTHOR
+------
+
+Satoshi Nishimura
+Dept. of Computer Software
+School of Computer Science and Engineering
+The University of Aizu, Japan
+Email: nisim@u-aizu.ac.jp

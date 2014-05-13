@@ -1,0 +1,10 @@
+Release 0.2     July  2  1998
+
+* Updated the compiler (see comp/ChangLog)
+* Tha name of the PMML Interpreter is changed to PMML Compiler. 
+* Added 'chord_apply' effector to "lib/_effs.pml"
+* PMML Users's Manual (Texinfo format) is now distributed with this package.
+* Discompiler (m2p) has been included.
+* Added "link.pml" to the library
+
+Release 0.1     Sep  2  1997
