@@ -8,7 +8,7 @@ MML(Music Macro Language)コンパイラのPMML(Practical Music Macro Language)�
 
 オリジナルのPMMLは以下のURLからダウンロードできますが、pmml-0.2p1.tar.gz(1998/06/17)以降は新しいバージョンがリリースされていないようです。このリポジトリはpmml-0.2p1.tar.gzからフォークして、2014年時点でのUNIX系OSでPMMLがビルドできるようソースコードを修正しています。
 
-以下のUNIX系OSでビルドが通ることを確認できています。Debianではgccの他にgpref(Perfect hash function fenerator)パッケージが必要です。
+以下のUNIX系OSでビルドが通ることを確認できています。Debianではgccの他にgpref(Perfect hash function generator)パッケージが必要です。
 
  * NetBSD-6.1-i386
  * Debian GNU/Linux 7.4 (wheezy)
