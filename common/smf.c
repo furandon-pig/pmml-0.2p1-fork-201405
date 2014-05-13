@@ -84,7 +84,6 @@ FILE  *fp;
 int   format, ntrks, division;
 {
     MFILE  *mfp;
-    char   *malloc();
     long   loc;
     
     mfp = (MFILE *) malloc( sizeof(MFILE) );
@@ -492,7 +491,6 @@ int   *ntrks;
 int   *division;
 {
     MFILE *mfp;
-    char  *malloc();
     long  size;
     
     mfp = (MFILE *) malloc( sizeof(MFILE) );
@@ -956,7 +954,6 @@ buffer_putc(c, mfp)
 int  c;
 MFILE  *mfp;
 {
-    char  *malloc();
     struct smf_bufblk  *newbp;
     
     if( mfp->bp && mfp->bp->nbytes < SMF_BLKSIZE ) {

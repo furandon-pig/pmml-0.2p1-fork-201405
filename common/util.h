@@ -23,6 +23,10 @@
 #ifndef __UTIL_H__
 #define __UTIL_H__
 
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
 #if defined(__STDC__) && !defined(PROTOTYPE)
 #   define PROTOTYPE 1 
 #endif
@@ -33,10 +37,6 @@
 #      define P(arg)  ()
 #   endif
 #endif
-
-char	*malloc();
-char	*realloc();
-char	*strdup();
 
 /*
  * dynamically-growing string 

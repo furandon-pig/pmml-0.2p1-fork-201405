@@ -20,6 +20,10 @@
  *  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
 /********************************************************************
  * Constants
  ********************************************************************/
@@ -285,13 +289,6 @@ extern	int	resolution;   /* SMF resolution (ticks per quarter note) */
 #      define P(arg)  ()
 #   endif
 #endif
-
-char	*malloc();
-char	*calloc();
-char	*realloc();
-char	*strdup();
-char	*strchr();
-char	*getenv();
 
 /********************************************************************
  * User Function Prototypes and Macros

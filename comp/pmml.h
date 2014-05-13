@@ -20,6 +20,10 @@
  *  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
 /********************************************************************
  * Constants
  ********************************************************************/
@@ -934,20 +938,6 @@ extern	Thread  *cur_thd;	/* current thread */
 extern  Thread  *root_thd;	/* root (global) thread */
 
 extern	int  err_maxelms, err_maxtklen, err_maxargs;	/* for err msg. */
-
-/********************************************************************
- * System Library Functions
- ********************************************************************/
-
-char	*malloc();
-char	*calloc();
-char	*realloc();
-char	*strdup();
-char	*strchr();
-char	*getenv();
-
-extern char *sys_errlist[];
-extern int  errno;
 
 /********************************************************************
  * User Function Prototypes and Macros

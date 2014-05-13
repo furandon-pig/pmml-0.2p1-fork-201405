@@ -25,6 +25,7 @@
 #include <stdio.h>
 #include <fcntl.h>
 #include <ctype.h>
+#include <errno.h>
 #include "pmml.h"
 
 /*

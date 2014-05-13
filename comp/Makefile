@@ -21,7 +21,7 @@ $(PROG): $(OBJS) $(COMMOBJS) $(CLIBOBJS)
 	$(CC) -o $(PROG) $(OBJS) $(COMMOBJS) $(CLIBOBJS) $(LDFLAGS) -lm
 
 keyword.c keyword.h table2.c: keywords
-	mkkw.sh
+	./mkkw.sh
 
 $(COMMOBJS):
 	cd ../common; $(MAKE) 'CC=$(CC)' 'CCOPTS=$(CCOPTS)'

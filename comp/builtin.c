@@ -25,6 +25,8 @@
 #include <stdio.h>
 #include <math.h>
 #include <ctype.h>
+#include <time.h>
+#include <unistd.h>
 #include "pmml.h"
 
 static void   do_rand P((int, Object *));
@@ -215,8 +217,6 @@ do_rand(argc, argv)
 int  argc;
 Object  *argv;
 {
-    long  random();
-
     pushbk_float(random() * 4.656612875e-10);	/* random * 1/(2**31-1) */
 }
 
@@ -228,8 +228,6 @@ do_irand(argc, argv)
 int  argc;
 Object  *argv;
 {
-    long  random();
-
     if( argc == 2 ) {
 	pushbk_int( random() % (argv[1].o_val - argv[0].o_val + 1) 
 		   + argv[0].o_val );
@@ -248,9 +246,6 @@ do_srand(argc, argv)
 int  argc;
 Object  *argv;
 {
-    long  time();
-    int   getpid();
-
     if( argc == 0 ) {
 	srandom((int) time(0L) + getpid());
     } else {
@@ -294,7 +289,6 @@ Object  *argv;
     int  n = argv->o_val;
     int  k, i;
     struct frand_stat  *sp;
-    long  random();
 
     /* find the status entery that matches the key */ 
     for( sp = frand_states; sp; sp = sp->next ) {
@@ -338,7 +332,6 @@ Object  *argv;
     struct fgrand_stat  *sp;
     int  k, n;
     long  s;
-    long  random();
 
     n = (argc >= 2) ? (argv[1].o_val - argv[0].o_val + 1) : argv[0].o_val;
     if( n < 1 )  n = 1;

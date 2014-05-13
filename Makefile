@@ -37,6 +37,8 @@ test:
 	(cd comp; $(MAKE) $(MAKEOPTS) test)
 
 install:
+	mkdir -p $(LIBDIR)
+	mkdir -p $(BINDIR)
 	for i in $(SUBDIRS); do \
 	  (echo $$i; cd $$i; $(MAKE) $(MAKEOPTS) install); \
 	done
